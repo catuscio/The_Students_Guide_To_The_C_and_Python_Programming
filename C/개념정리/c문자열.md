@@ -98,3 +98,10 @@ o
 - strstr(str, substr)   //str에서 substr문자열을 찾는다(찾은 문자열의 주소 반환)
 - strtok(str, delim)    //str을 delim을 이용해서 토큰으로 분리한다. (토큰 문자열 반환)
 ```
+### `strncpy(dest, src, size)` 함수 오류 해결법
+해당 함수는 dest로 src를 복사하되, size까지 복사한다. 가령, size = 4일 경우, src의 네번째 문자까지만 복사한다.\
+strncpy를 통해 복사된 dest에 쓰레기값이 검출될 경우,
+```c
+dest[size] = '\0';
+```
+위의 코드처럼 dest의 끝을 강제로 매겨 해결할 수 있다.
